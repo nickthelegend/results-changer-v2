@@ -1,0 +1,205 @@
+var htno = 0;
+$(document).ready(function(){
+    setCookie('loading', 'false', '100');
+	$(function() {
+      var $id = $('.hallticket');
+      $id.keyup(function(e) {
+        if ($id.val().length ==10) {
+           $(".getResultButton").trigger("click");
+        }
+      });
+	});
+	
+	$(function() {
+		$(".tutionFeeForgotPasswordForm input").focus();
+	});
+
+	setTimeout( function(){ 
+		loadIntialResults();
+	}  , 2000 );
+
+	
+});
+
+//hide footer when input box is on focu
+$(document).on('focus', 'input, textarea', function() {
+	if (window.matchMedia('(max-width: 1024px)').matches) {
+	$(".footer").hide();
+	$(".logo").css("margin-top", "-126px");
+	}
+});
+
+//show footer when input is NOT on focus
+$(document).on('blur', 'input, textarea', function() {
+	if (window.matchMedia('(max-width: 1024px)').matches) {
+	$(".footer").show();
+	$(".logo").css("margin-top", "10px");
+	}
+});
+	/* $('html').bind('cut copy paste', function (e) {
+        e.preventDefault();
+    });
+   
+    //Disable mouse right click
+    $("html").on("contextmenu",function(e){
+        return false;
+    }); 
+	
+	var isCtrl = false;
+	document.onkeyup=function(e)
+	{
+		if(e.which == 17)
+		isCtrl=false;
+	}
+	document.onkeydown=function(e)
+	{
+		if(e.which == 17)
+		isCtrl=true;
+		if((e.which == 85) || (e.which == 67) && (isCtrl == true))
+		{
+			return false;
+		}
+	}
+	var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+	if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+	function mischandler(){
+		return false;
+	}
+	function mousehandler(e){
+		var myevent = (isNS) ? e : event;
+		var eventbutton = (isNS) ? myevent.which : myevent.button;
+		if((eventbutton==2)||(eventbutton==3)) return false;
+	}
+	document.oncontextmenu = mischandler;
+	document.onmousedown = mousehandler;
+	document.onmouseup = mousehandler;
+	
+	$(document).keydown(function(event){
+    if(event.keyCode==123){
+    return false;
+	   }
+	else if(event.ctrlKey && event.shiftKey && event.keyCode==73){        
+		  return false;  //Prevent from ctrl+shift+i
+	   }
+	}); */
+	
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function getResult(result) {
+	$('.formResult').slideUp('fast');
+	
+	var hallticket = $.trim($('.hallticket').val());
+	if(hallticket !=htno) {
+	if(hallticket.length == 10) {
+	$.ajax({
+		type: "POST",
+		url: jntuhcehpay_zone()+"?jntuhcehpayOne=getResult",
+		data: "hallticket="+hallticket+"&result="+result, 
+		cache: false,
+		start_time: new Date().getTime(),
+		beforeSend: function() {
+			$('.formResult').slideUp('fast');
+			$('.formProcessing').html('<i class="fa fa-spinner" aria-hidden="true"></i> Processing').slideDown('fast');
+			},
+		success: function(html) {
+			$('.formProcessing').slideUp('fast');
+			$('.wrapper').html(html);
+			$('.formResult').delay(4000).slideUp('slow');	
+		},
+		complete: function(html) {
+			var requestTime = new Date().getTime() - this.start_time;
+			requestTimeinSeconds = requestTime*0.001;
+			$('.timeElaspedForRequest').html('Request processed in '+requestTimeinSeconds.toFixed(3)+' seconds');
+			htno = hallticket;
+		}
+	});
+	} else {
+		$('.wrapper').html('<div class="isa_error">HallTicket Number must be 10 characters.</div>');
+	}
+}
+}
+
+function loadMoreResults(resultId, searchKey, examYear, examRegulation, examCourse) {
+	
+	
+	if(getCookie('loading') == 'false'){
+	    setCookie('loading', 'true', '100');
+	$.ajax({
+		type: "POST",
+		url: jntuhcehpay_zone()+"?jntuhcehpayOne=loadMoreResults",
+		data: "resultId="+resultId+"&searchKey="+searchKey+"&examYear="+examYear+"&examRegulation="+examRegulation+"&examCourse="+examCourse, 
+		cache: false,
+		beforeSend: function() {
+			$('.ehMainAjaxResult').slideUp('fast');
+			$('.ehMainLoader').slideDown('fast');
+			},
+		success: function(html) {
+			$('#load-more').remove();
+			$('.ehMainLoader').slideUp('fast');
+			// Append the new comment to the div id
+			$('#resultList').append(html);
+			setCookie('loading', 'false', '100');
+		}
+	});
+	}
+}
+
+function loadIntialResults() {
+
+	var searchKey = $.trim($('#searchKey').val());
+	var examYear = $.trim($('#examYear').val());
+	//alert(searchKey);
+	var examCourse = $.trim($('input[name="course"]:checked').val());
+	var examRegulation = $.trim($('input[name="regulation"]:checked').val());
+	
+	$.ajax({
+		type: "POST",
+		url: jntuhcehpay_zone()+"?jntuhcehpayOne=loadIntialResults",
+		data: "searchKey="+searchKey+"&examYear="+examYear+"&examCourse="+examCourse+"&examRegulation="+examRegulation, 
+		cache: false,
+		beforeSend: function() {
+			$('#resultList').html('<div class="wrapperAnimation"><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div><div class="wrapper-cell"><div class="text"><div class="text-line"></div><div class="text-line-small"></div></div></div></div>');
+			},
+		success: function(html) {
+			$('#resultList').html(html);
+		}
+	});
+}
+
+function goBack() {
+window.history.back();
+}
+var processing;
+
+$(document).scroll(function(e){
+
+	if (processing)
+		return false;
+
+	if ($(window).scrollTop() >= $(document).height() - $(window).height() - 1500){
+		processing = true;
+		$('#homePageResultLoad').click();
+			processing = false;
+		
+	}
+});
