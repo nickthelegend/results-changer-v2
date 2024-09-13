@@ -15,7 +15,7 @@ app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
 
 // Serve static files from the 'index_files' directory when accessing '/'
 app.use('/index_files', express.static(path.join(__dirname, 'index_files')));
-
+console.log(__dirname);
 // List of hardcoded hall ticket numbers to check
 const monitoredHallTickets = ['23011A6675', '23011A6667', '23011A6668'];
 
