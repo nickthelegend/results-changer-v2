@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://results.jntuhceh.ac.in/ -->
+<html lang="en" xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="EngineersHub">
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+    
+	<meta name="theme-color" content="#053a63">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" charset="utf-8" src="./index_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-1TUNDcvWQ6Ms5xMd7JPWn58lx7KCTI21j1WEYm2E+AxZi1T3AogJVuz8TFKxqipQ"></script><script async="" src="./index_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114131862-1');
+</script>
+<link rel="manifest" href="https://results.jntuhceh.ac.in/manifest.json">
+<script src="./index_files/OneSignalSDK.js.download" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "9aef4c4f-1ecf-49b1-9832-44a3213bc4d6",
+    });
+  });
+</script>
+	<!-- Latest compiled and minified CSS -->
+	<link type="text/css" rel="stylesheet" href="./index_files/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="./index_files/style.css">
+	<link type="text/css" href="./index_files/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" href="./index_files/font-awesome(1).min.css" rel="stylesheet">
+	<link type="text/css" href="./index_files/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./index_files/jquery-ui.css">
+	<link type="text/css" rel="stylesheet" href="./index_files/select2.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="https://results.jntuhceh.ac.in/themes/dhondi/images/favicon.ico">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="application/x-javascript" src="./index_files/jquery-1.11.min.js.download"></script>
+	<script type="application/x-javascript" src="./index_files/jquery.easing.min.js.download"></script>
+	<script type="application/x-javascript" src="./index_files/jqueryui.min.js.download"></script>
+  <script type="application/x-javascript" src="./index_files/jquery.inactivity.js.download"></script>
+  <script src="./index_files/jquery-ui.js.download"></script>
+  <script src="./index_files/api.js.download"></script>
+
+<!-- <script>function jntuhcehpay_zone(){return '/helper.php';}</script> -->
+		<!-- Including Header -->
+<!-- Logo -->
+</head><body><div class="logo">
+<a href="https://results.jntuhceh.ac.in/"><img src="./index_files/jntuhceh.png"></a>
+<a href="https://results.jntuhceh.ac.in/"><h1>JNTUH College of Engineering, Hyderabad (Autonomous)</h1></a>
+</div>
+<div class="logoOne">
+<h3>Examination Results</h3>
+</div>
+<title>JNTUHCEH Results</title>
+<div class="notificationHolder">
+<div class="resultSearchHolder">
+			<form>
+				<div class="textSearchHolder">
+				<span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
+				<input type="text" onkeyup="loadIntialResults();" id="searchKey" placeholder="IV Year I Sem">
+				</div>
+				<div class="selectYearHolder">
+										<select id="examYear" onchange="loadIntialResults();">
+						<option value="" disabled="" selected="">Exam Year</option>
+						<option value="">All</option>
+													<option value="2024">2024</option>
+														<option value="2023">2023</option>
+														<option value="2022">2022</option>
+														<option value="2021">2021</option>
+														<option value="2020">2020</option>
+														<option value="2019">2019</option>
+														<option value="2018">2018</option>
+														<option value="2017">2017</option>
+												</select>
+				</div>
+				<div class="filterRadioButtons">
+					<ul class="filterCourseButtons">
+					<span>Filters: </span>
+						<li>
+							<input onclick="loadIntialResults();" type="radio" id="all" name="course" value="" checked="">
+							<label for="all">All</label>
+						</li>
+											
+						<li>
+							<input onclick="loadIntialResults();" type="radio" id="btech" name="course" value="btech">
+							<label for="btech">B.Tech</label>
+						</li>
+													
+						<li>
+							<input onclick="loadIntialResults();" type="radio" id="mca" name="course" value="mca">
+							<label for="mca">MCA</label>
+						</li>
+													
+						<li>
+							<input onclick="loadIntialResults();" type="radio" id="msc" name="course" value="msc">
+							<label for="msc">M.Sc</label>
+						</li>
+													
+						<li>
+							<input onclick="loadIntialResults();" type="radio" id="mtech" name="course" value="mtech">
+							<label for="mtech">M.Tech</label>
+						</li>
+												</ul>
+					</div>
+					<div class="filterRadioButtons">
+					<ul class="filterCourseButtons blockDisplay">
+						<li>
+							<input onclick="loadIntialResults();" type="radio" id="all" name="regulation" value="" checked="">
+							<label for="all">All</label>
+						</li>
+											<li>
+							<input onclick="loadIntialResults();" type="radio" id="R22" name="regulation" value="R22">
+							<label for="R22">R22</label>
+						</li>
+													<li>
+							<input onclick="loadIntialResults();" type="radio" id="R21" name="regulation" value="R21">
+							<label for="R21">R21</label>
+						</li>
+													<li>
+							<input onclick="loadIntialResults();" type="radio" id="R20" name="regulation" value="R20">
+							<label for="R20">R20</label>
+						</li>
+													<li>
+							<input onclick="loadIntialResults();" type="radio" id="R19" name="regulation" value="R19">
+							<label for="R19">R19</label>
+						</li>
+													<li>
+							<input onclick="loadIntialResults();" type="radio" id="R18" name="regulation" value="R18">
+							<label for="R18">R18</label>
+						</li>
+													<li>
+							<input onclick="loadIntialResults();" type="radio" id="R17" name="regulation" value="R17">
+							<label for="R17">R17</label>
+						</li>
+													<li>
+							<input onclick="loadIntialResults();" type="radio" id="R15" name="regulation" value="R15">
+							<label for="R15">R15</label>
+						</li>
+												</ul>
+				</div>
+			</form>
+		</div>
+		<hr class="formAndResultDivider">
+	<div class="tutionFeeHolder">
+		<div class="tutionFeeContent" id="resultList">  <a class="resultBlockLink" href="/result/2ca7767b6cd777e5e38cee883232fd46">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech I Year I Sem R22 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Wednesday, 28th August 2024</span>
+			</div>
+		</div>
+		</a>
+		
+		<hr>
+		  <!-- <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/5e4248e8742f76338aeb113e33e2c13b"> -->
+		<!-- <div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem IDP- R21 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Wednesday, 28th August 2024</span>
+			</div>
+		</div>
+		</a>
+		
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/e1989199f333ca92ff5e3189630c696b">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem IDDMP- R21 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Wednesday, 28th August 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+IDDMP-+R21+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/e1989199f333ca92ff5e3189630c696b" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/c4586a6f7a6cbccdfa771f90cfb3ae18">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply IDP- R21 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Saturday, 3rd August 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply+IDP-+R21+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/c4586a6f7a6cbccdfa771f90cfb3ae18" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/b14932f034aaf70a62fe6eb3b7186cde">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply IDDMP- R21 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Saturday, 3rd August 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply+IDDMP-+R21+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/b14932f034aaf70a62fe6eb3b7186cde" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/b34509d6fe9033f8a086faed1c09aa99">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem R21- MINOR IN IoT JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Saturday, 3rd August 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+R21-+MINOR+IN+IoT+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/b34509d6fe9033f8a086faed1c09aa99" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/321dade23befdd70826924cab4044090">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem R21- MINOR IN AIML JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Saturday, 3rd August 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+R21-+MINOR+IN+AIML+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/321dade23befdd70826924cab4044090" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/651794a0da1bfd7febf6832ae299eae4">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply- R21 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Saturday, 3rd August 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply-+R21+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/651794a0da1bfd7febf6832ae299eae4" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/27df0fa8e97db2168ed885e244e54d30">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply- R15 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply-+R15+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/27df0fa8e97db2168ed885e244e54d30" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/b1ded9aed5ecc13aa35804ffca14abaa">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply IDP- R15 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply+IDP-+R15+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/b1ded9aed5ecc13aa35804ffca14abaa" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/f72f8a145b0b3599848015ab5ba3f1df">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem Supply - R15 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+Supply+-+R15+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/f72f8a145b0b3599848015ab5ba3f1df" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/7cd400885324353b73708c28db7f5675">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem Supply IDP - R15 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+Supply+IDP+-+R15+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/7cd400885324353b73708c28db7f5675" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/d4b1078598c9ebb0eb87f38a2ad47f34">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply IDP- R17 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply+IDP-+R17+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/d4b1078598c9ebb0eb87f38a2ad47f34" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/5424a74104948dd7185b3387257da747">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply- R17 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply-+R17+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/5424a74104948dd7185b3387257da747" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/42f652d623e029c2d338d5667f46a8e6">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem Supply- IDDMP R17 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+Supply-+IDDMP+R17+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/42f652d623e029c2d338d5667f46a8e6" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/5dd8287fe1cc9968ce1f46d0bc93b251">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem Supply IDP- R17 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Tuesday, 30th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+Supply+IDP-+R17+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/5dd8287fe1cc9968ce1f46d0bc93b251" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/a7c74d53dcdef1450d94e70630192017">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year II Sem Supply- IDDMP R18 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Monday, 15th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+II+Sem+Supply-+IDDMP+R18+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/a7c74d53dcdef1450d94e70630192017" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/a72e2fd7cc96678282f73564e1481454">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply- IIDDMP R18 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Friday, 12th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply-+IIDDMP+R18+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/a72e2fd7cc96678282f73564e1481454" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/d16f74fcad77d511d0f86561f95e9259">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply- IDDMP R18 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Friday, 12th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply-+IDDMP+R18+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/d16f74fcad77d511d0f86561f95e9259" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		  <a class="resultBlockLink" href="https://results.jntuhceh.ac.in/result/350232cd47660af70a44ebaa3b7009d3">
+		<div class="examListHolder">
+			
+			<div class="examListHolderOne">
+			 B.Tech III Year I Sem Supply- IDP R18 JUNE 2024			</div>
+			<div class="examListHolderTwo">
+			<span>Result published on Friday, 12th July 2024</span>
+			</div>
+		</div>
+		</a>
+		<a class="shareOnWhatsApp" target="_blank" href="https://api.whatsapp.com/send?text=B.Tech+III+Year+I+Sem+Supply-+IDP+R18+JUNE+2024+https%3A%2F%2Fresults.jntuhceh.ac.in/result/350232cd47660af70a44ebaa3b7009d3" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+		<hr>
+		      <div id="load-more">
+        <div onclick="loadMoreResults(&#39;2938&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;)" class="button-load" id="homePageResultLoad">
+          <a class="waves-effect waves-light btn red"><i class="mdi-editor-vertical-align-bottom left"></i>Load More</a>
+        </div>
+      </div>
+    </div>
+	</div> -->
+</div>
+
+<script>
+$(document).ready(function(){
+	superplaceholder({
+	el: document.querySelector('#searchKey'),
+	sentences: ['II sem regular', 'IDP', 'I Sem Regular', 'IV Year I Sem', 'II Year II Sem', 'August 2019'],
+	options: {
+		loop: true,
+		startOnFocus: false
+	}
+});
+});
+</script>
+<div class="modal-background">
+</div>
+<div class="loading-modal">
+	<span class="loading-modal-message"></span>
+</div>
+<!-- Including Footer -->
+<!-- <div class="helpHolder no-print">
+<a class="helpHolderInstructions"><i class="fa fa-info-circle" aria-hidden="true"></i> Instructions</a>
+</div> -->
+<div class="footer">
+<a href="https://play.google.com/store/apps/details?id=com.jntuhceh" target="_blank">Download App<img style="width:45px;" src="./index_files/play.png"></a> | © 2024. Powered by <a href="https://dhondi.com/" target="_blank"><img src="./index_files/dhondi.png"></a>
+</div>
+
+<div class="formProcessing">
+
+</div>
+<div class="formResult">
+
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./index_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177610564-1');
+</script>
+
+
+
+<script type="application/x-javascript" src="./index_files/superplaceholder.js.download"></script>
+<script type="application/x-javascript" src="./index_files/jquery.color.min.js.download"></script>
+<script type="application/x-javascript" src="./index_files/core.js.download"></script>
+<script type="application/x-javascript" src="./index_files/select2.min.js.download"></script>
+<script type="application/x-javascript" src="./index_files/bootstrap.min.js.download"></script>
+<script type="application/x-javascript" src="./index_files/multipleAccordion.min.js.download"></script>
+<script type="application/x-javascript" src="./index_files/fontAwesome.min.js.download"></script>
+<script type="application/x-javascript" src="./index_files/layout.min.js.download"></script>
+<script type="application/x-javascript" src="./index_files/jquery.mCustomScrollbar.concat.min.js.download"></script>
+</body><!-- Javascript files --></html>
