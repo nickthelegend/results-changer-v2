@@ -113,7 +113,7 @@ function getResult(result) {
 	if(hallticket.length == 10) {
 	$.ajax({
 		type: "POST",
-		url: jntuhcehpay_zone()+"?jntuhcehpayOne=getResult",
+		url: "/result/jntuhcehpayOne",
 		data: "hallticket="+hallticket+"&result="+result, 
 		cache: false,
 		start_time: new Date().getTime(),

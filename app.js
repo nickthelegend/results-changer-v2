@@ -125,12 +125,23 @@ app.get('/result/:hashId', async (req, res) => {
     }
 
     // Send the local HTML file as a response
-    const filePath = path.join(__dirname, 'results', 'index.html');
-    res.sendFile(filePath, (err) => {
-      if (err) {
-        res.status(404).send('404 Not Found');
-      }
-    });
+    try {
+      // Send a GET request to the external URL
+      const response = await axios.get(externalUrl);
+      let htmlContent = response.data; // Get the HTML content
+  
+      // Use a regular expression to find and replace the string 2640 with customValue
+      htmlContent = htmlContent.replace(/getResult\(\d+\)/, `getResult(${match[1]})`);
+  
+      // Log the modified HTML content to verify the replacement
+      console.log('Modified HTML Content:', htmlContent);
+  
+      // Send the modified HTML content as a response
+      res.send(htmlContent);
+    } catch (error) {
+      console.error('Error fetching data from the external URL:', error.message);
+      res.status(500).send('Error fetching data from the external URL');
+    }
   } catch (error) {
     console.error('Error fetching data from the external URL:', error.message);
     res.status(500).send('Error fetching data from the external URL');
